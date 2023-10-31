@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Comment\StoreRequest;
+use App\Models\Comment;
 
-class Comment extends Controller
+class CommentController extends Controller
 {
     public function index()
     {
-        $comments = \App\Models\Comment::all();
-        return view('comment.index', compact('comments'));
+/*        $comments = \App\Models\Comment::all();
+        return view('comment.index', compact('comments'));*/
+        return Comment::all();
     }
 
     public function create()
@@ -21,6 +23,6 @@ class Comment extends Controller
     {
         $data = $request->validated();
         \App\Models\Comment::create($data);
-        return view('comment.create');
+        return redirect()->route('comments.index');
     }
 }

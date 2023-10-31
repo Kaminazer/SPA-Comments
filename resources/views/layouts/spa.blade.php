@@ -12,11 +12,12 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
 </head>
     <body>
-        <div class="container ml-4">
-            @yield('content')
-        </div>
+    <div id="app">
 
+    </div>
     </body>
 </html>
